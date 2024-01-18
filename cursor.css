@@ -1,0 +1,54 @@
+/* The Webpage is designed with the following CSS.
+Here I have used  Blue as the background color of the webpage.*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    height: 100vh;
+    background: #000115;
+    cursor: none;
+}
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* I have designed small colorful points using the following this point width: 20px,
+height:20px and border-radius: 50% has been used to make it completely round.*/
+/* I have added the required color using the box-shadow to add gradient color with it.Here I have used three colors.You can change the color as per your needs.
+The 5s animation is used here,meaning that colors you can add can be seen again every five seconds.*/
+.cursor {
+    z-index: 999;
+    position: fixed;
+    background: #2696E8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #2696E8;
+    animation: colors 5s infinite;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+@keyframes colors {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+.cursor::before {
+    content: "";
+    position: absolute;
+    background : #2696E8;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%,-30%);
+    border-radius: 50%;
+}
